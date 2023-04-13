@@ -1,0 +1,52 @@
+body,
+#root {
+  height: 100%;
+}
+
+.main {
+  height: 100%;
+  padding: 1rem;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 24px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgb(49 54 68 / 5%), 0 5px 20px rgb(49 54 68 / 8%);
+}
+
+.logs {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 24px;
+}
+
+.log {
+  gap: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+​.streaming {
+  white-space: pre-wrap;
+}
+
+.streaming > :not(ol):not(ul):not(pre):last-child:after,
+.streaming > ol:last-child li:last-child:after,
+.streaming > pre:last-child code:after,
+.streaming > ul:last-child li:last-child:after {
+  -webkit-animation: blink 1s steps(5, start) infinite;
+  animation: blink 1s steps(5, start) infinite;
+  content: '▋';
+  margin-left: 0.25rem;
+  vertical-align: baseline;
+}

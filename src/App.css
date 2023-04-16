@@ -12,8 +12,8 @@ body,
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 24px;
-  border-radius: 6px;
+  padding: 2rem;
+  border-radius: 1rem;
   border: 1px solid #ddd;
   box-shadow: 0 4px 6px rgb(49 54 68 / 5%), 0 5px 20px rgb(49 54 68 / 8%);
 }
@@ -21,11 +21,11 @@ body,
 .logs {
   flex: 1;
   overflow-y: auto;
-  margin-bottom: 24px;
+  margin-bottom: 1rem;
 }
 
 .log {
-  gap: 8px;
+  gap: 0.4rem;
   display: flex;
   flex-direction: column;
 }

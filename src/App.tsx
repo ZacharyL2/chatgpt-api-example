@@ -1,11 +1,13 @@
+import { useCallback, useState } from 'react';
+import { Button, Input, Space, Typography } from 'antd';
+
 import './App.css';
 import ask from './ask';
-import remarkGfm from 'remark-gfm';
-import 'highlight.js/styles/vs2015.css';
+
 import ReactMarkdown from 'react-markdown';
-import { useCallback, useState } from 'react';
+import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import { Button, Input, Space, Typography } from 'antd';
+import 'highlight.js/styles/vs2015.css';
 
 const { Text } = Typography;
 
@@ -75,7 +77,7 @@ export default () => {
   const isAnswering = Boolean(answeringContent);
 
   const onSubmit = () => {
-    if (isAnswering) return;
+    if (isAnswering || !question) return;
     const messages = logs.concat({
       id: crypto.randomUUID(),
       role: Role.User,
@@ -122,7 +124,7 @@ export default () => {
             onChange={(e) => setQuestion(e.target.value)}
           />
           <Button type='primary' onClick={onSubmit} loading={isAnswering}>
-            {isAnswering ? 'Loading' : 'Submit'}
+            {isAnswering ? 'Answering' : 'Submit'}
           </Button>
         </Space.Compact>
       </div>

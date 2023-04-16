@@ -85,7 +85,7 @@ const ask = async (
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: '',
+      Authorization: '', // Fill your OpenAI key
     },
     body: JSON.stringify({
       stream: true,
